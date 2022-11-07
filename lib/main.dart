@@ -318,7 +318,6 @@ class _MapViewState extends State<MapView> {
   @override
   void initState() {
     super.initState();
-    _getCurrentLocation();
   }
 
   @override
@@ -344,6 +343,7 @@ class _MapViewState extends State<MapView> {
               polylines: Set<Polyline>.of(polylines.values),
               onMapCreated: (GoogleMapController controller) {
                 mapController = controller;
+                _getCurrentLocation();
               },
             ),
             // Show zoom buttons
